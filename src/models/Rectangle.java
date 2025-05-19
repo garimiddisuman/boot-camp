@@ -1,6 +1,8 @@
 package models;
 
-public class Rectangle {
+import models.interfaces.ClosedShape;
+
+public class Rectangle implements ClosedShape {
     private final int length;
     private final int width;
 

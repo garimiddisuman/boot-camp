@@ -20,7 +20,7 @@ class RectangleTest {
     @Test
     void shouldCalculatePerimeter() {
         Rectangle rectangle = new Rectangle(1, 1);
-        assertEquals(4, rectangle.perimeter(), "should return perimeter");
+        assertEquals(4, rectangle.perimeter(), "should return perimeter of rect");
 
         Rectangle rectangle1 = new Rectangle(0, 1);
         assertEquals(2, rectangle1.perimeter(), "should return double of width if length is zero");
