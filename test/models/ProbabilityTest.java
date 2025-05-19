@@ -1,14 +1,29 @@
 package models;
-
-import models.enums.CoinFlip;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProbabilityTest {
     @Test
-    void shouldFlipCoin() {
-        assertEquals(0.5, CoinFlip.HEAD.getProbability(), "should return 0.5 for head");
-        assertEquals(0.5, CoinFlip.TAIL.getProbability(), "should return 0.5 for tail");
+
+    public void shouldRepresentProbability() {
+        Probability probability = Probability.create(0.2);
+        Probability complimented = probability.compliment();
+
+        assert(complimented.equals(Probability.create(0.8)));
+    }
+
+    @Test
+    void shouldRepresentAndProbability() {
+        Probability p1 = Probability.create(0.5);
+        Probability p2 = Probability.create(0.5);
+        Probability p3 = p1.and(p2);
+
+        assert(p3.equals(Probability.create(0.25)));
+    }
+
+    @Test
+    void shouldThrowExceptionsForInvalidProbability() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> Probability.create(1.2));
+        assertEquals("invalid probability", exception.getMessage());
     }
 }
