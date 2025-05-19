@@ -1,13 +1,11 @@
 package models;
-
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class RectangleTest {
     @Test
     void shouldCalculateArea() {
-        Rectangle rectangle = new Rectangle(1, 2);
+        Rectangle rectangle = new Rectangle(1.0, 2.0);
         assertEquals(2, rectangle.area(), "should return area of rect");
 
         Rectangle rectangle1 = new Rectangle(0, 1);

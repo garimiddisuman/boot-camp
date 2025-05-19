@@ -1,19 +1,19 @@
 package models;
 
-import models.interfaces.ClosedShape;
+import models.interfaces.Polygon;
 
-public class Square implements ClosedShape {
+public class Square implements Polygon {
     private final int side;
 
-    public Square(int side) {
+    public Square(double side) {
         this.side = side;
     }
 
-    public int area() {
+    public double area() {
         return side * side;
     }
 
-    public int perimeter() {
+    public double perimeter() {
         return 4 * side;
     }
 }
