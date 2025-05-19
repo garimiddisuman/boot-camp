@@ -17,12 +17,16 @@ public class Probability {
         throw new IllegalArgumentException("invalid probability");
     }
 
-    public Probability compliment() {
-        return new Probability(1 - chance);
+    public Probability not() {
+        return Probability.create(1 - chance);
     }
 
     public Probability and(Probability p2) {
         return new Probability(chance * p2.chance);
+    }
+
+    public Probability or(Probability p1) {
+        return new Probability(p1.chance + chance - (p1.chance * chance));
     }
 
     @Override
