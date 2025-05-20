@@ -7,25 +7,33 @@ import static org.junit.jupiter.api.Assertions.*;
 class LengthTest {
     @Test
     void shouldCompareInchAndFeet() {
-        Length fromInch = Length.createFromInch(12);
-        Length fromFeet = Length.createFromFeet(1);
+        Length twelveInches = Length.createFromInch(12);
+        Length oneFeet = Length.createFromFeet(1);
 
-        assertEquals(fromFeet, fromInch);
+        assertEquals(oneFeet, twelveInches);
     }
 
     @Test
     void shouldCompareFeetAndCm() {
-        Length fromInch = Length.createFromInch(2);
-        Length fromCm = Length.createFromCm(5);
+        Length twoInches = Length.createFromInch(2);
+        Length fiveCm = Length.createFromCm(5);
 
-        assertEquals(fromCm, fromInch);
+        assertEquals(fiveCm, twoInches);
     }
 
     @Test
     void shouldCompareCmAndMm() {
-        Length fromCm = Length.createFromCm(1);
-        Length fromMm = Length.createFromMm(10);
+        Length oneCm = Length.createFromCm(1);
+        Length tenMm = Length.createFromMm(10);
 
-        assertEquals(fromCm, fromMm);
+        assertEquals(oneCm, tenMm);
+    }
+
+    @Test
+    void shouldAddInches() {
+        Length twoInches = Length.createFromInch(2);
+        Length fourInches = Length.createFromInch(4);
+
+        assertEquals(fourInches, twoInches.add(twoInches));
     }
 }

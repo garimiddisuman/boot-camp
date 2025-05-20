@@ -1,10 +1,7 @@
 package models.units;
-
-
 import java.util.Objects;
 
 public class Volume {
-
     private final double litre;
 
     private Volume(double litre) {
