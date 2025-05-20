@@ -1,8 +1,7 @@
-package models;
+package models.polygon;
 
-import models.interfaces.Polygon;
 
-public class Rectangle implements Polygon {
+public class Rectangle {
     private final double length;
     private final double width;
 

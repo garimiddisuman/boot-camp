@@ -1,4 +1,4 @@
-package models;
+package models.probability;
 
 import java.util.Objects;
 
@@ -10,11 +10,11 @@ public class Probability {
     }
 
     static public Probability create(double value) {
-        if (value <= 1 && value >= 0) {
-            return new Probability(value);
+        if (value > 1.0 || value < 0.0) {
+            throw new IllegalArgumentException("invalid probability");
         }
 
-        throw new IllegalArgumentException("invalid probability");
+        return new Probability(value);
     }
 
     public Probability not() {
@@ -26,7 +26,7 @@ public class Probability {
     }
 
     public Probability or(Probability p1) {
-        return new Probability(p1.chance + chance - (p1.chance * chance));
+        return new Probability(p1.chance + chance - and(p1).chance);
     }
 
     @Override

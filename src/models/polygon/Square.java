@@ -1,4 +1,4 @@
-package models;
+package models.polygon;
 
 public class Square extends Rectangle {
     public Square(double side) {
